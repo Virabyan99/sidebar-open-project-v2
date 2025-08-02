@@ -1,3 +1,4 @@
+// components/ui/Sidebar.tsx
 "use client";
 import { useSpring, animated } from "react-spring";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,6 @@ interface SidebarProps {
 }
 
 const SIDEBAR_WIDTH = 256;
-const TOOLBAR_HEIGHT = 64;
 
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const styles = useSpring({
@@ -21,8 +21,8 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     <animated.div
       style={{
         ...styles,
-        top: `${TOOLBAR_HEIGHT}px`,
-        height: `calc(100vh - ${TOOLBAR_HEIGHT}px)`,
+        top: `0px`,
+        height: `100vh`,
         width: `${SIDEBAR_WIDTH}px`,
       }}
       className="fixed right-0 bg-sidebar text-sidebar-foreground border-l border-sidebar-border rounded-l-md shadow-xl overflow-y-auto z-20"
